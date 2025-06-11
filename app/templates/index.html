@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- Project Title -->
+    <h1 class="text-center text-primary mb-4">Startup Profit Prediction</h1>
+
+    <!-- 📌 Section 1: Project Implementation -->
+    <div class="card shadow p-4 mb-4">
+        <h2 class="text-success">Project Implementation</h2>
+        <p>
+            This project predicts **startup profits** based on investment in **R&D Spend, Administration, and Marketing**, considering the **state of operation**. 
+            The **trained machine learning model** analyzes these factors and provides an estimated profit for a startup.
+        </p>
+        <ul>
+            <li>Data is preprocessed and features are selected for training.</li>
+            <li>Multiple models are trained, and the one with **highest accuracy** is chosen.</li>
+            <li>The model is **deployed using Flask**, providing a user-friendly UI.</li>
+            <li>Users enter investment details, and the model **predicts the profit** dynamically.</li>
+        </ul>
+    </div>
+
+    <!-- 📌 Section 2: Project Importance -->
+    <div class="accordion mb-4" id="projectImportance">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#importanceContent">
+                    Why is this Project Important?
+                </button>
+            </h2>
+            <div id="importanceContent" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    <p>Startups often struggle to estimate potential profits before making key financial decisions. This project helps:</p>
+                    <ul>
+                        <li>**Entrepreneurs** decide on their investment strategies.</li>
+                        <li>**Investors** assess risk before funding startups.</li>
+                        <li>**Business analysts** understand key factors affecting profits.</li>
+                        <li>**Researchers & students** explore how machine learning is applied in financial predictions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📌 Section 3: Models Used -->
+    <div class="card shadow p-4 mb-4">
+        <h2 class="text-info">Machine Learning Models Used</h2>
+        <p>We experimented with multiple machine learning models and selected the **best performing one**:</p>
+        
+        <div class="row">
+            <!-- Model 1 -->
+            <div class="col-md-4">
+                <div class="card border-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Random Forest (Best)</h5>
+                        <p class="card-text">
+                            Random Forest gave the **highest accuracy** in predicting startup profits. 
+                            It handles **non-linearity, feature interactions**, and works well with tabular data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 2 -->
+            <div class="col-md-4">
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">XGBoost</h5>
+                        <p class="card-text">
+                            XGBoost performed well but slightly underperformed compared to Random Forest.
+                            It's **efficient and robust**, especially with larger datasets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 3 -->
+            <div class="col-md-4">
+                <div class="card border-warning">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Linear Regression</h5>
+                        <p class="card-text">
+                            Linear Regression struggled with **non-linearity** in data.
+                            It’s a simple yet effective model for understanding feature importance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-3"><strong>Final Choice:</strong> Random Forest, due to its superior accuracy.</p>
+    </div>
+
+    <!-- 📌 Section 4: Feature Explanation -->
+    <div class="accordion" id="featureExplanation">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#featureContent">
+                    Explanation of Features
+                </button>
+            </h2>
+            <div id="featureContent" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <table class="table table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Feature</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>R&D Spend ($)</strong></td>
+                                <td>Amount invested in **Research & Development**. Higher investment typically leads to innovation and profitability.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Administration Cost ($)</strong></td>
+                                <td>Money spent on **admin expenses** (HR, legal, operations). Essential for smooth business functioning.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing Spend ($)</strong></td>
+                                <td>Investment in **marketing campaigns** (advertising, branding). Higher spend **attracts customers & boosts revenue**.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>State</strong></td>
+                                <td>Location of the startup, which affects taxes, policies, and **market competition**.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📌 Section 5: Get Started -->
+    <div class="text-center mt-4">
+        <a href="/predict" class="btn btn-primary btn-lg">Start Prediction</a>
+    </div>
+
+</div>
+{% endblock %}

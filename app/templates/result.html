@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <h2 class="text-center">Prediction Result</h2>
+        <div class="card shadow p-4 mt-4">
+            <h4 class="text-primary text-center">Predicted Profit: <strong>${{ predicted_profit | round(2) }}</strong></h4>
+            <hr>
+            <h5 class="text-center">Input Details</h5>
+            <table class="table table-bordered mt-3">
+                <tr><th>R&D Spend</th><td>${{ RnD_Spend }}</td></tr>
+                <tr><th>Administration</th><td>${{ Administration }}</td></tr>
+                <tr><th>Marketing Spend</th><td>${{ Marketing_Spend }}</td></tr>
+                <tr><th>State</th><td>{{ State }}</td></tr>
+            </table>
+        </div>
+        <div class="text-center mt-3">
+            <a href="/predict" class="btn btn-secondary">Predict Again</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
